@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <nav className="border-b-2 border-platinum-border-dark bg-platinum-bg-dark sticky top-0 z-50 shadow-macos">
       <div className="max-w-content mx-auto px-6 py-4">
-        <ul className="flex gap-18 flex-wrap justify-center">
+        <ul className="flex gap-20 flex-wrap justify-center">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
