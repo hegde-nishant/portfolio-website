@@ -50,9 +50,9 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ['Geneva', 'Tahoma', 'Verdana', 'Arial', 'sans-serif'],
-        display: ['Geneva', 'Charcoal', 'Chicago', 'Impact', 'Arial Black', 'sans-serif'],
-        mono: ['Monaco', 'Courier New', 'Courier', 'monospace'],
+        sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+        display: ['var(--font-ibm-plex-sans)', 'var(--font-inter)', 'Impact', 'Arial Black', 'sans-serif'],
+        mono: ['var(--font-ibm-plex-mono)', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
       },
       fontSize: {
         'body': ['1rem', { lineHeight: '1.6' }],

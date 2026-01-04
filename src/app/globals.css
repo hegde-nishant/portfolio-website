@@ -5,8 +5,8 @@
 @layer base {
   body {
     @apply bg-platinum-bg text-platinum-text font-sans;
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -18,9 +18,9 @@
     @apply transition-colors duration-150;
   }
 
-  /* Classic Mac text rendering - no smoothing for authentic pixelated look */
+  /* Smooth font rendering for modern displays */
   * {
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }

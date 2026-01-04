@@ -8,7 +8,7 @@ export const workExperience: WorkExperience[] = [
     startDate: "June 2025",
     endDate: "Present",
     summary:
-      "Built production computer vision and NLP systems including a real-time YOLOv8-based streetlight tracking pipeline and a RAG-powered emergency response training assistant. Deployed a hybrid retrieval architecture combining BM25, dense embeddings, and Zerank re-ranking with local Ollama LLM for secure offline querying.",
+      "As a Data Science Intern, I delivered 3 production-ready AI MVPs across object detection, instance segmentation, and RAG, building modular computer vision pipelines that processed 5,000+ aerial images with 91% detection accuracy, reduced emergency response training time by 70%, and aligned model outputs with business goals through stakeholder-facing visualizations.",
   },
   {
     id: "2",
@@ -17,7 +17,7 @@ export const workExperience: WorkExperience[] = [
     startDate: "August 2025",
     endDate: "December 2025",
     summary:
-      "Developed novel deep learning architectures (U-Shaped Fourier Neural Operator and Attention Recurrent Residual U-Net) to model laser amplification processes through the OMEGA EP laser system. Optimized HPC training infrastructure across A100/H100 GPU clusters using advanced techniques like model parallelism and mixed-precision training, achieving 40% faster training and 30% reduced VRAM usage.",
+      "As a Machine Learning Intern, I developed neural operator and attention-based spatiotemporal models for high-energy laser physics, achieving ~1% prediction error and 1.57% energy error, while engineering distributed HPC training pipelines that reduced training time by 40% and GPU memory usage by 30% on A100/H100 clusters.",
   },
   {
     id: "3",
@@ -26,6 +26,6 @@ export const workExperience: WorkExperience[] = [
     startDate: "August 2020",
     endDate: "May 2024",
     summary:
-      "Engineered data-driven C++ validation modules for NVMe management interfaces (SMBus/I2C) that reduced SSD operational latency by 31% and improved firmware stability by 15%. Automated CI/CD pipelines with Jenkins and built Python-based debugging tools, reducing manual QA effort by 20% while leading deployment using Agile/Scrum methodologies.",
+      "As a Software Engineer, I designed and validated enterprise NVMe SSD firmware, built automated regression and CI pipelines that improved firmware stability by 15%, reduced manual QA effort by 20%, increased documentation efficiency by 33%, and enhanced long-running test reliability through fault-tolerant debugging and telemetry tools.",
   },
 ];
