@@ -8,7 +8,7 @@ export const workExperience: WorkExperience[] = [
     startDate: "June 2025",
     endDate: "Present",
     summary:
-      "As a Data Science Intern, I delivered 3 production-ready AI MVPs across object detection, instance segmentation, and RAG, building modular computer vision pipelines that processed 5,000+ aerial images with 91% detection accuracy, reduced emergency response training time by 70%, and aligned model outputs with business goals through stakeholder-facing visualizations.",
+      "As a Data Science Intern, I engineered the following 3 AI MVPs across object detection, instance segmentation, and retrieval-augmented generation. A modular computer vision pipeline for detecting streetlights in low-light nighttime drone imagery, a thermal imaging based rooftop leak detection pipeline on aerial FLIR imagery, leveraging AWS ML infrastructure, and an offline RAG system with hybrid retrieval (Docling multimodal parsing, Ollama LLM) for gas facility safety training.",
   },
   {
     id: "2",
