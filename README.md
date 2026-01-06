@@ -4,10 +4,10 @@ A minimalist, text-focused portfolio website built with Next.js 14, TypeScript, 
 
 ## Pages
 
-- **Home** (`/`): Hero section with profile photo, work experience, and education
-- **Projects** (`/projects`): Grid of 5 projects with detailed individual pages
-- **Resume** (`/resume`): Full resume with PDF download option
-- **Contact** (`/contact`): Contact information and social links
+- **Home**: Hero section with profile photo, work experience, and education
+- **Projects**: Grid of 5 projects with detailed individual pages
+- **Resume**: Full resume with PDF download option
+- **Contact**: Contact information and social links
 
 ## Tech Stack
 
