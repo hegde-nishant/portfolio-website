@@ -9,23 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // MacOS 9 Platinum theme palette
-        platinum: {
-          bg: '#DDDDDD',           // Main background - classic Mac gray
-          'bg-light': '#EEEEEE',   // Lighter areas
-          'bg-dark': '#CCCCCC',    // Darker sections
-          border: '#999999',       // Standard borders
-          'border-dark': '#666666', // Darker borders
-          'border-light': '#FFFFFF', // Highlight/3D effect
-          text: '#000000',         // Primary text
-          'text-muted': '#555555', // Secondary text
+        // Facebook (2007-2009) color palette
+        facebook: {
+          blue: '#3b5998',           // Primary Facebook blue
+          'blue-dark': '#2d4373',    // Hover states
+          'blue-light': '#5b7ab8',   // Subtle accents
+          'blue-medium': '#6E84B5',  // Medium blue for section headers
         },
-        macos: {
-          bg: '#DDDDDD',
-          'bg-secondary': '#EEEEEE',
-          'bg-tertiary': '#CCCCCC',
-          border: '#999999',
-          'border-dark': '#666666',
+        background: {
+          page: '#F2F2F2',           // Classic Facebook gray background
+          white: '#ffffff',          // Content boxes
+          sidebar: '#f7f7f7',        // Sidebar background
+          'table-stripe': '#F7F7F7', // Alternating table row color
+        },
+        text: {
+          primary: '#333333',        // Main text
+          secondary: '#777777',      // Secondary text
+          light: '#999999',          // Light text
+        },
+        border: {
+          light: '#e5e5e5',          // Content box borders
+          medium: '#cccccc',         // Stronger borders
         },
         gray: {
           50: '#FAFAFA',
@@ -39,20 +43,11 @@ const config: Config = {
           800: '#222222',
           900: '#000000',
         },
-        blue: {
-          DEFAULT: '#0066CC',      // Muted blue for platinum theme
-          dark: '#004499',
-          light: '#3399FF',
-        },
-        accent: {
-          blue: '#0066CC',
-          'blue-dark': '#004499',
-        }
       },
       fontFamily: {
-        sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
-        display: ['var(--font-ibm-plex-sans)', 'var(--font-inter)', 'Impact', 'Arial Black', 'sans-serif'],
-        mono: ['var(--font-ibm-plex-mono)', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
+        sans: ['Tahoma', 'Verdana', 'Arial', 'sans-serif'],
+        display: ['Tahoma', 'Verdana', 'Arial', 'sans-serif'],
+        mono: ['Courier New', 'Courier', 'monospace'],
       },
       fontSize: {
         'body': ['1rem', { lineHeight: '1.6' }],
@@ -66,11 +61,9 @@ const config: Config = {
         'section': '4rem',
       },
       boxShadow: {
-        'macos': '2px 2px 0 0 rgba(0, 0, 0, 0.2)',
-        'macos-lg': '3px 3px 0 0 rgba(0, 0, 0, 0.3)',
-        'macos-inset': 'inset 1px 1px 0 0 rgba(255, 255, 255, 0.5), inset -1px -1px 0 0 rgba(0, 0, 0, 0.2)',
-        'button-3d': '1px 1px 0 0 #FFFFFF, 2px 2px 0 0 #666666',
-        'button-3d-pressed': 'inset 1px 1px 2px 0 rgba(0, 0, 0, 0.3)',
+        'fb-card': '0 1px 2px rgba(0, 0, 0, 0.1)',
+        'fb-header': '0 2px 4px rgba(0, 0, 0, 0.1)',
+        'fb-button': '0 1px 0 rgba(0, 0, 0, 0.1)',
       }
     },
   },

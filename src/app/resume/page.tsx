@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Section from '@/components/ui/Section';
-import MacButton from '@/components/ui/MacButton';
+import SectionTitle from '@/components/ui/SectionTitle';
+import FacebookButton from '@/components/ui/FacebookButton';
 
 export const metadata: Metadata = {
   title: 'Resume | Nishant Hegde',
@@ -9,26 +10,23 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <div className="py-12">
+    <>
       <Section>
-        {/* Header */}
-        <div className="mb-8 flex justify-between items-center">
-          <h1 className="text-3xl md:text-4xl font-display text-platinum-text">
-            Resume
-          </h1>
+        <SectionTitle showEdit={false} bgColor="bg-facebook-blue-medium">Resume</SectionTitle>
 
-          {/* Download Button */}
-          <MacButton
+        {/* Download Button */}
+        <div className="p-4 border-b border-border-light">
+          <FacebookButton
             href="/resume.pdf"
             download="NishantHegde_Resume.pdf"
             variant="primary"
           >
             Download PDF →
-          </MacButton>
+          </FacebookButton>
         </div>
 
         {/* PDF Viewer */}
-        <div className="w-full bg-platinum-bg-light border-2 border-platinum-border-dark shadow-macos-lg">
+        <div className="w-full border-t border-border-light">
           <iframe
             src="/resume.pdf"
             className="w-full h-[1000px] md:h-[1200px]"
@@ -36,6 +34,6 @@ export default function ResumePage() {
           />
         </div>
       </Section>
-    </div>
+    </>
   );
 }

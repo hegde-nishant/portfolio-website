@@ -14,61 +14,51 @@ export default function CreditsPage() {
   const projectsWithCredits = projects.filter(p => p.imageCredit);
 
   return (
-    <div className="py-12">
+    <div className="py-6">
       <Section>
-        <SectionTitle subtitle="Proper attribution for external images used on this website">
+        <SectionTitle showEdit={false} subtitle="Proper attribution for external images used on this website">
           Image Credits & Attributions
         </SectionTitle>
 
-        <div className="space-y-8">
-          {projectsWithCredits.map((project) => (
+        <div className="p-4">
+          {projectsWithCredits.map((project, index) => (
             <div
               key={project.slug}
-              className="bg-platinum-bg-light border-2 border-platinum-border p-6"
+              className={`py-4 ${
+                index !== projectsWithCredits.length - 1 ? 'border-b border-border-light' : ''
+              }`}
             >
-              <h3 className="text-xl font-display text-platinum-text mb-3">
+              <h3 className="text-sm font-bold text-text-primary mb-2">
                 {project.title}
               </h3>
 
               {project.imageCredit && (
-                <div className="space-y-2 text-body text-platinum-text">
+                <div className="space-y-1 text-xs text-text-secondary">
                   <p>
-                    <strong>Image:</strong> Thumbnail
+                    <strong className="text-text-primary">Image:</strong> Thumbnail
                   </p>
                   <p>
-                    <strong>Author:</strong>{' '}
-                    <ExternalLink
-                      href={project.imageCredit.sourceUrl}
-                      className="text-blue hover:underline"
-                    >
+                    <strong className="text-text-primary">Author:</strong>{' '}
+                    <ExternalLink href={project.imageCredit.sourceUrl}>
                       {project.imageCredit.author}
                     </ExternalLink>
                   </p>
                   <p>
-                    <strong>Source:</strong> {project.imageCredit.source}
+                    <strong className="text-text-primary">Source:</strong> {project.imageCredit.source}
                   </p>
                   <p>
-                    <strong>License:</strong>{' '}
-                    <ExternalLink
-                      href={project.imageCredit.licenseUrl}
-                      className="text-blue hover:underline"
-                    >
+                    <strong className="text-text-primary">License:</strong>{' '}
+                    <ExternalLink href={project.imageCredit.licenseUrl}>
                       {project.imageCredit.license}
                     </ExternalLink>
                   </p>
-                  <p className="text-sm text-platinum-text-muted mt-3">
+                  <p className="mt-2">
                     This work is licensed under{' '}
-                    <ExternalLink
-                      href={project.imageCredit.licenseUrl}
-                      className="text-blue hover:underline"
-                    >
+                    <ExternalLink href={project.imageCredit.licenseUrl}>
                       {project.imageCredit.license}
                     </ExternalLink>
                     . To view a copy of this license, visit{' '}
-                    <ExternalLink
-                      href={project.imageCredit.licenseUrl}
-                      className="text-blue hover:underline break-all"
-                    >
+                    <ExternalLink href={project.imageCredit.licenseUrl}>
                       {project.imageCredit.licenseUrl}
                     </ExternalLink>
                   </p>
@@ -78,24 +68,22 @@ export default function CreditsPage() {
           ))}
 
           {projectsWithCredits.length === 0 && (
-            <p className="text-platinum-text-muted text-center py-12">
+            <p className="text-text-secondary text-center py-8 text-sm">
               All images on this website are original or properly licensed.
             </p>
           )}
         </div>
+      </Section>
 
-        <div className="mt-12 pt-8 border-t-2 border-platinum-border-dark">
-          <h3 className="text-lg font-display text-platinum-text mb-3">
-            About These Licenses
-          </h3>
-          <div className="space-y-4 text-body text-platinum-text-muted">
-            <p>
-              <strong className="text-platinum-text">CC BY 2.0</strong> - This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator.
-            </p>
-            <p>
-              <strong className="text-platinum-text">CC BY-SA 4.0</strong> - This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms.
-            </p>
-          </div>
+      <Section>
+        <SectionTitle showEdit={false}>About These Licenses</SectionTitle>
+        <div className="p-4 space-y-3 text-xs text-text-secondary">
+          <p>
+            <strong className="text-text-primary">CC BY 2.0</strong> - This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator.
+          </p>
+          <p>
+            <strong className="text-text-primary">CC BY-SA 4.0</strong> - This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms.
+          </p>
         </div>
       </Section>
     </div>

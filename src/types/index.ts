@@ -4,6 +4,8 @@ export interface PersonalInfo {
   bio: string;
   funFact?: string;
   profilePhoto: string;
+  location?: string;
+  interests?: string;
 }
 
 export interface WorkExperience {

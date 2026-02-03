@@ -4,18 +4,18 @@
 
 @layer base {
   body {
-    @apply bg-platinum-bg text-platinum-text font-sans;
+    @apply bg-background-page text-text-primary font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-platinum-text font-display font-bold;
+    @apply text-text-primary font-display font-bold;
     letter-spacing: 0;
   }
 
   a {
-    @apply transition-colors duration-150;
+    @apply text-facebook-blue hover:underline transition-colors duration-150;
   }
 
   /* Smooth font rendering for modern displays */

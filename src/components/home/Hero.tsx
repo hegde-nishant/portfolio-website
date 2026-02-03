@@ -1,36 +1,91 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 import { personalInfo } from '@/data/personal';
+import { contactInfo } from '@/data/contact';
 import Section from '@/components/ui/Section';
+import SectionTitle from '@/components/ui/SectionTitle';
 
 export default function Hero() {
+  const [personalInfoExpanded, setPersonalInfoExpanded] = useState(true);
+
   return (
-    <Section className="pt-16 pb-12">
-      <div className="flex flex-col md:flex-row gap-8 items-start">
-        <div className="flex-shrink-0">
-          <Image
-            src={personalInfo.profilePhoto}
-            alt={personalInfo.name}
-            width={160}
-            height={160}
-            className="object-cover shadow-macos-lg border-4 border-platinum-border-dark"
-            priority
-          />
-        </div>
-        <div className="flex-1">
-          <h1 className="text-4xl md:text-5xl font-display text-platinum-text mb-2">
-            {personalInfo.name}
-          </h1>
-          <p className="text-base md:text-lg text-platinum-text-muted mb-6 font-bold">
-            {personalInfo.tagline}
-          </p>
-          <p className="text-body text-platinum-text">
-            {personalInfo.bio}
-          </p>
-          {personalInfo.funFact && (
-            <p className="text-body text-platinum-text italic mt-4">
-              {personalInfo.funFact}
-            </p>
-          )}
+    <Section>
+      <SectionTitle showEdit={false} bgColor="bg-facebook-blue-medium">Profile</SectionTitle>
+      <div className="p-3">
+        <div className="grid md:grid-cols-[250px_1fr] gap-6">
+          {/* LEFT COLUMN: Large Photo */}
+          <div>
+            <Image
+              src={personalInfo.profilePhoto}
+              alt={personalInfo.name}
+              width={250}
+              height={300}
+              className="w-full border border-gray-400"
+              priority
+            />
+          </div>
+
+          {/* RIGHT COLUMN: Info sections */}
+          <div className="space-y-3">
+            {/* Basic Info - plain text */}
+            <div className="space-y-1">
+              <h3 className="text-lg font-bold text-facebook-blue">{personalInfo.name}</h3>
+              <p className="text-sm text-text-primary">{personalInfo.tagline}</p>
+              <p className="text-sm text-text-primary">{personalInfo.location}</p>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-0.5 text-xs">
+              <div className="flex gap-2">
+                <span className="text-text-secondary">Email:</span>
+                <a href={`mailto:${contactInfo.email}`} className="text-facebook-blue hover:underline">
+                  {contactInfo.email}
+                </a>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-text-secondary">LinkedIn:</span>
+                <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-facebook-blue hover:underline">
+                  {contactInfo.linkedin.replace('https://linkedin.com/in/', '')}
+                </a>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-text-secondary">GitHub:</span>
+                <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" className="text-facebook-blue hover:underline">
+                  {contactInfo.github.replace('https://github.com/', '')}
+                </a>
+              </div>
+            </div>
+
+            {/* Collapsible Personal Info Section */}
+            <div className="border-t border-border-light pt-3">
+              <div
+                className="flex items-center gap-2 bg-[#D8DFEA] px-2 py-1 cursor-pointer"
+                onClick={() => setPersonalInfoExpanded(!personalInfoExpanded)}
+              >
+                <span className="text-facebook-blue text-xs">{personalInfoExpanded ? '▼' : '►'}</span>
+                <h4 className="text-sm font-bold text-facebook-blue">Personal Info</h4>
+              </div>
+
+              {personalInfoExpanded && (
+                <div className="mt-2 space-y-2 text-xs">
+                  <div>
+                    <span className="text-text-secondary">About:</span>{' '}
+                    <span className="text-text-primary">{personalInfo.bio}</span>
+                  </div>
+                  <div>
+                    <span className="text-text-secondary">Interests:</span>{' '}
+                    <span className="text-text-primary">{personalInfo.interests}</span>
+                  </div>
+                  <div>
+                    <span className="text-text-secondary">Fun Fact:</span>{' '}
+                    <span className="text-text-primary">{personalInfo.funFact}</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </Section>

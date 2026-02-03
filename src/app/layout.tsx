@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/layout/Navbar'
+import FacebookLayout from '@/components/layout/FacebookLayout'
 import Footer from '@/components/layout/Footer'
 
 const inter = Inter({
@@ -44,10 +44,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
       <body>
-        <Navbar />
-        <main className="min-h-screen">
+        <FacebookLayout>
           {children}
-        </main>
+        </FacebookLayout>
         <Footer />
       </body>
     </html>
