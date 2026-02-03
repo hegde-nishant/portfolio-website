@@ -14,39 +14,35 @@ export default function ProjectsPage() {
   const projectsWithCredits = projects.filter(p => p.imageCredit);
 
   return (
-    <Section className="pt-12">
-      <SectionTitle>Projects</SectionTitle>
-      <ProjectGrid projects={projects} />
+    <>
+      <Section>
+        <SectionTitle showEdit={false} bgColor="bg-facebook-blue-medium">Projects</SectionTitle>
+        <div className="p-4">
+          <ProjectGrid projects={projects} />
+        </div>
+      </Section>
 
       {/* Image Credits */}
       {projectsWithCredits.length > 0 && (
-        <div className="mt-16 pt-8 border-t-2 border-platinum-border-dark">
-          <h3 className="text-lg font-display text-platinum-text mb-4">
-            Image Credits
-          </h3>
-          <div className="space-y-3 text-sm text-platinum-text-muted">
+        <Section>
+          <SectionTitle showEdit={false}>Image Credits</SectionTitle>
+          <div className="p-4 space-y-3">
             {projectsWithCredits.map((project) => (
-              <p key={project.slug}>
-                <strong className="text-platinum-text">{project.title}:</strong>{' '}
+              <p key={project.slug} className="text-xs text-text-secondary">
+                <strong className="text-text-primary">{project.title}:</strong>{' '}
                 Image by{' '}
-                <ExternalLink
-                  href={project.imageCredit!.sourceUrl}
-                  className="text-blue hover:underline"
-                >
+                <ExternalLink href={project.imageCredit!.sourceUrl}>
                   {project.imageCredit!.author}
                 </ExternalLink>
                 {' '}from {project.imageCredit!.source}, licensed under{' '}
-                <ExternalLink
-                  href={project.imageCredit!.licenseUrl}
-                  className="text-blue hover:underline"
-                >
+                <ExternalLink href={project.imageCredit!.licenseUrl}>
                   {project.imageCredit!.license}
                 </ExternalLink>
               </p>
             ))}
           </div>
-        </div>
+        </Section>
       )}
-    </Section>
+    </>
   );
 }

@@ -1,31 +1,44 @@
+'use client';
+
+import { useState } from 'react';
 import { education } from '@/data/education';
-import Section from '@/components/ui/Section';
-import SectionTitle from '@/components/ui/SectionTitle';
 
 export default function Education() {
+  const [expanded, setExpanded] = useState(true);
+
   return (
-    <Section>
-      <SectionTitle>Education</SectionTitle>
-      <div className="space-y-4">
-        {education.map((edu) => (
-          <div key={edu.id} className="bg-platinum-bg-light border-2 border-platinum-border-dark p-6 shadow-macos">
-            <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
-              <h3 className="text-lg md:text-xl font-display text-platinum-text">
+    <div id="education" className="mb-3 max-w-content mx-auto bg-white border border-border-medium">
+      <div
+        className="flex items-center gap-2 bg-[#D8DFEA] px-3 py-1.5 cursor-pointer"
+        onClick={() => setExpanded(!expanded)}
+      >
+        <span className="text-facebook-blue text-xs">{expanded ? '▼' : '►'}</span>
+        <h2 className="text-sm font-bold text-facebook-blue">Education</h2>
+      </div>
+
+      {expanded && (
+        <div className="p-3 space-y-4">
+          {education.map((edu) => (
+            <div key={edu.id} className="text-xs space-y-1">
+              <h3 className="font-bold text-text-primary">
                 {edu.degree} in {edu.branch}
               </h3>
-              <span className="text-xs text-platinum-text-muted md:ml-4 font-medium">
-                {edu.startDate} - {edu.endDate}
-              </span>
+              <div>
+                <span className="text-text-secondary">Institution:</span>{' '}
+                <span className="text-text-primary">{edu.institution}</span>
+              </div>
+              <div>
+                <span className="text-text-secondary">Location:</span>{' '}
+                <span className="text-text-primary">{edu.location}</span>
+              </div>
+              <div>
+                <span className="text-text-secondary">Dates:</span>{' '}
+                <span className="text-text-primary">{edu.startDate} - {edu.endDate}</span>
+              </div>
             </div>
-            <p className="text-base text-platinum-text font-semibold">
-              {edu.institution}
-            </p>
-            <p className="text-sm text-platinum-text-muted">
-              {edu.location}
-            </p>
-          </div>
-        ))}
-      </div>
-    </Section>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

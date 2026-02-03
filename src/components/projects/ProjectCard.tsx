@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const handleClick = () => {
-    // Play volume mount sound
+    // Play click sound
     const audio = new Audio("/sounds/click.mp3");
     audio.volume = 0.3;
     audio.play().catch(() => {
@@ -24,8 +24,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       className="group block"
       onClick={handleClick}
     >
-      <article className="h-full bg-platinum-bg-light border-2 border-platinum-border-dark overflow-hidden shadow-macos hover:shadow-macos-lg transition-shadow">
-        <div className="relative aspect-[4/3] overflow-hidden bg-platinum-bg-dark border-b-2 border-platinum-border">
+      <article className="h-full bg-white border border-border-light overflow-hidden shadow-fb-card hover:shadow-fb-header transition-shadow">
+        <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 border-b border-border-light">
           <Image
             src={project.thumbnail}
             alt={project.title}
@@ -33,8 +33,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             className="object-cover"
           />
         </div>
-        <div className="p-5">
-          <h3 className="text-base md:text-lg font-display text-platinum-text group-hover:text-blue transition-colors">
+        <div className="p-3">
+          <h3 className="text-sm font-bold text-facebook-blue group-hover:underline">
             {project.title}
           </h3>
         </div>

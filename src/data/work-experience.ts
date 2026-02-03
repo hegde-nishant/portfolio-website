@@ -8,7 +8,7 @@ export const workExperience: WorkExperience[] = [
     startDate: "June 2025",
     endDate: "Present",
     summary:
-      "As a Data Science Intern, I engineered the following 3 AI MVPs across object detection, instance segmentation, and retrieval-augmented generation. A modular computer vision pipeline for detecting streetlights in low-light nighttime drone imagery, a thermal imaging based rooftop leak detection pipeline on aerial FLIR imagery, leveraging AWS ML infrastructure, and an offline RAG system with hybrid retrieval (Docling multimodal parsing, Ollama LLM) for gas facility safety training.",
+      "As a Data Science Intern, I led the development of 3 MVP deep learning solutions for the company’s AI platform across object detection, instance segmentation, and retrieval-augmented generation. A modular computer vision pipeline for detecting streetlights in low-light nighttime drone imagery, a thermal imaging based rooftop leak detection pipeline on aerial FLIR imagery, leveraging AWS ML infrastructure, and an offline RAG system with hybrid retrieval (Docling multimodal parsing, Ollama LLM) for gas facility safety training.",
   },
   {
     id: "2",
