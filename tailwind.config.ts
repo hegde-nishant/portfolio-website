@@ -55,7 +55,7 @@ const config: Config = {
       },
       maxWidth: {
         'prose': '65ch',
-        'content': '900px',
+        'content': '1100px',
       },
       spacing: {
         'section': '4rem',

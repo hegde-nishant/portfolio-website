@@ -5,6 +5,7 @@
 @layer base {
   body {
     @apply bg-background-page text-text-primary font-sans;
+    font-size: 1.125rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
